@@ -3,6 +3,22 @@ INS-lessons
 
 # The code 
 ```r
+# 1 # calidad ##
+fastqc *.gz -t 12 ; 
+mkdir fastqc ;
+mv *.html *.zip fastqc/ ; 
+ls -lh ;
+
+## ¿phred-score? ##
+## ¿qué indican los plots de FASTQC? ##
+## ¿qué calidad promedio tienen los reads generados? ##
+## ¿qué calidad longitudes promedio tienen los reads generados? ##
+```
+
+
+
+# The code 
+```r
 ## cleaning ##
 java -jar trimmomatic.jar PE forward.fastq.gz reverse.fastq.gz output_forward_paired.fq.gz output_forward_unpaired.fq.gz output_reverse_paired.fq.gz output_reverse_unpaired.fq.gz LEADING:3 TRAILING:3 MINLEN:200 ;
 mv output_forward_paired.fq.gz forward_paired.fq.gz ;  
