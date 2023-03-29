@@ -4,6 +4,7 @@ INS-lessons
 # The code 1
 ```r
 # 1 # calidad ##
+## fastqc ##
 fastqc *.gz -t 12 ; 
 mkdir fastqc ;
 mv *.html *.zip fastqc/ ; 
@@ -14,7 +15,10 @@ ls -lh ;
 ## ¿qué calidad promedio tienen los reads generados? ##
 ## ¿qué longitudes promedio tienen los reads generados? ##
 
-## trimmomatic ## 
+
+# 2 # trimming ##
+## trimmomatic - fastqc ## 
+# http://www.usadellab.org/cms/index.php?page=trimmomatic # 
 java -jar trimmomatic-0.39.jar PE 030506923_S6_L001_R1_001.fastq.gz 030510223_S8_L001_R1_001.fastq.gz ${prefix}_f_paired.fq.gz ${prefix}_f_unpaired.fq.gz ${prefix}_r_paired.fq.gz ${prefix}_r_unpaired.fq.gz LEADING:3 TRAILING:3 MINLEN:140 ;
 ```
 
