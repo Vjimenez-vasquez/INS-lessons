@@ -1,7 +1,7 @@
 # INS-lessons
 INS-lessons
 
-# The code 
+# The code 1
 ```r
 # 1 # calidad ##
 fastqc *.gz -t 12 ; 
