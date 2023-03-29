@@ -12,7 +12,7 @@ ls -lh ;
 ## ¿phred-score? ##
 ## ¿qué indican los plots de FASTQC? ##
 ## ¿qué calidad promedio tienen los reads generados? ##
-## ¿qué calidad longitudes promedio tienen los reads generados? ##
+## ¿qué longitudes promedio tienen los reads generados? ##
 ```
 
 
