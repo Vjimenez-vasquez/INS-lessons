@@ -15,7 +15,6 @@ ls -lh ;
 ## ¿qué calidad promedio tienen los reads generados? ##
 ## ¿qué longitudes promedio tienen los reads generados? ##
 
-
 # 2 # trimming ##
 # http://www.usadellab.org/cms/index.php?page=trimmomatic # 
 java -jar trimmomatic-0.39.jar PE 030506923_S6_L001_R1_001.fastq.gz 030506923_S6_L001_R2_001.fastq.gz 030506923_f_paired.fq.gz 030506923_f_unpaired.fq.gz 030506923_r_paired.fq.gz 030506923_r_unpaired.fq.gz LEADING:5 TRAILING:5 MINLEN:140 SLIDINGWINDOW:4:20 ;
