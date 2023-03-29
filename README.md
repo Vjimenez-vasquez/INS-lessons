@@ -20,6 +20,9 @@ ls -lh ;
 java -jar trimmomatic-0.39.jar PE 030506923_S6_L001_R1_001.fastq.gz 030506923_S6_L001_R2_001.fastq.gz 030506923_f_paired.fq.gz 030506923_f_unpaired.fq.gz 030506923_r_paired.fq.gz 030506923_r_unpaired.fq.gz LEADING:5 TRAILING:5 MINLEN:140 SLIDINGWINDOW:4:20 ;
 java -jar trimmomatic-0.39.jar PE 030510223_S8_L001_R1_001.fastq.gz 030510223_S8_L001_R2_001.fastq.gz 030510223_f_paired.fq.gz 030510223_f_unpaired.fq.gz 030510223_r_paired.fq.gz 030510223_r_unpaired.fq.gz LEADING:5 TRAILING:5 MINLEN:140 SLIDINGWINDOW:4:20 ;
 java -jar trimmomatic-0.39.jar PE 030510823_S4_L001_R1_001.fastq.gz 030510823_S4_L001_R2_001.fastq.gz 030510823_f_paired.fq.gz 030510823_f_unpaired.fq.gz 030510823_r_paired.fq.gz 030510823_r_unpaired.fq.gz LEADING:5 TRAILING:5 MINLEN:140 SLIDINGWINDOW:4:20 ;
+mkdir trimm ; 
+mv *paired.fq.gz trimm/ ; 
+rm *unpaired.fq.gz ; 
 ls -lh ; 
 
 ```
