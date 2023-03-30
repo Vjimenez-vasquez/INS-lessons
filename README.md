@@ -39,13 +39,13 @@ mkdir fastqc ;
 mv *.html *.zip fastqc/ ; 
 ls -lh ; 
 
-## spades assembly ##
+# 3 # spades assembly ##
 spades -1 030506923_f_paired.fq.gz -2 030506923_r_paired.fq.gz --careful -o 030506923_spades -t 25 ;
 spades -1 030510223_f_paired.fq.gz -2 030510223_r_paired.fq.gz --careful -o 030510223_spades -t 25 ;
 spades -1 030510823_f_paired.fq.gz -2 030510823_r_paired.fq.gz --careful -o 030510823_spades -t 25 ;
 ls -lh ; 
 
-## cambiar nombres ##
+# 4 # cambiar nombres ##
 mv 030506923_spades/contigs.fasta 030506923_spades/030506923_contigs.fasta  ; 
 mv 030506923_spades/scaffolds.fasta 030506923_spades/030506923_scaffolds.fasta ; 
 mv 030506923_spades/030506923_contigs.fasta 030506923_spades/030506923_scaffolds.fasta . ; 
@@ -58,6 +58,14 @@ mv 030510223_spades/contigs.fasta 030510223_spades/030510223_contigs.fasta  ;
 mv 030510223_spades/scaffolds.fasta 030510223_spades/030510223_scaffolds.fasta ; 
 mv 030510223_spades/030510223_contigs.fasta 030510223_spades/030510223_scaffolds.fasta . ;
 ls -lh ; 
+
+# 5 # preparar la data #
+grep ">" sequences.fasta | wc -l ;
+grep ">" sequences.fasta ; 
+sed 's/\ |.*//g' sequences.fasta > sequences2.fasta ; 
+grep ">" sequences2.fasta ; 
+
+
 ```
 
 # Don't touch this, don't even look 
