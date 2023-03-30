@@ -65,6 +65,20 @@ grep ">" sequences.fasta ;
 sed 's/\ |.*//g' sequences.fasta > sequences2.fasta ; 
 grep ">" sequences2.fasta ; 
 
+# 6 # añadir IDs a cada contigs de cada muestra#
+# install.packages("seqinr") #
+library(seqinr) ;
+r <- dir() ;
+head <- gsub("_contigs.fasta","",r) ;
+a <- 0 ;
+for (i in 1:length(head)){ ;
+  a <- read.fasta(r[i]) ;
+  names(a) <- paste0(rep(head[i],length(a)),"_",names(a)) ;
+  write.fasta(a,names(a), file.out=paste0(head[i],".fas")) ;
+} ;
+q("no") ;
+
+cat *.fas > contigs.fasta
 
 ```
 
