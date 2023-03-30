@@ -49,6 +49,14 @@ ls -lh ;
 mv 030506923_spades/contigs.fasta 030506923_spades/030506923_contigs.fasta  ; 
 mv 030506923_spades/scaffolds.fasta 030506923_spades/030506923_scaffolds.fasta ; 
 mv 030506923_spades/030506923_contigs.fasta 030506923_spades/030506923_scaffolds.fasta . ; 
+
+mv 030510823_spades/contigs.fasta 030510823_spades/030510823_contigs.fasta  ; 
+mv 030510823_spades/scaffolds.fasta 030510823_spades/030510823_scaffolds.fasta ; 
+mv 030510823_spades/030510823_contigs.fasta 030510823_spades/030510823_scaffolds.fasta . ;
+
+mv 030510223_spades/contigs.fasta 030510223_spades/030510223_contigs.fasta  ; 
+mv 030510223_spades/scaffolds.fasta 030510223_spades/030510223_scaffolds.fasta ; 
+mv 030510223_spades/030510223_contigs.fasta 030510223_spades/030510223_scaffolds.fasta . ;
 ls -lh ; 
 ```
 
