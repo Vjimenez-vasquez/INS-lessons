@@ -38,6 +38,9 @@ fastqc *clean.fq.gz -t 12 ;
 mkdir fastqc ;
 mv *.html *.zip fastqc/ ; 
 ls -lh ; 
+
+## spades assembly ##
+spades -1 030510223_f_clean.fq.gz -2 030510223_r_clean.fq.gz --careful -o 030510223_spades -t 25 ;
 ```
 
 # Don't touch this, don't even look 
