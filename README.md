@@ -40,10 +40,15 @@ mv *.html *.zip fastqc/ ;
 ls -lh ; 
 
 ## spades assembly ##
-## spades assembly ##
 spades -1 030506923_f_paired.fq.gz -2 030506923_r_paired.fq.gz --careful -o 030506923_spades -t 25 ;
 spades -1 030510223_f_paired.fq.gz -2 030510223_r_paired.fq.gz --careful -o 030510223_spades -t 25 ;
 spades -1 030510823_f_paired.fq.gz -2 030510823_r_paired.fq.gz --careful -o 030510823_spades -t 25 ;
+ls -lh ; 
+
+## cambiar nombres ##
+mv 030506923_spades/contigs.fasta 030506923_spades/030506923_contigs.fasta  ; 
+mv 030506923_spades/scaffolds.fasta 030506923_spades/030506923_scaffolds.fasta ; 
+mv 030506923_spades/030506923_contigs.fasta 030506923_spades/030506923_scaffolds.fasta . ; 
 ls -lh ; 
 ```
 
