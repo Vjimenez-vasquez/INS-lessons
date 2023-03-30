@@ -1,7 +1,7 @@
 # INS-lessons
 INS-lessons
 
-# The code 1
+# The code for INS
 ```r
 # 1 # calidad ##
 ## fastqc ##
@@ -18,9 +18,9 @@ ls -lh ;
 # 2 # trimming ##
 # http://www.usadellab.org/cms/index.php?page=trimmomatic # 
 ## trimmomatic ##
-java -jar trimmomatic-0.39.jar PE 030506923_S6_L001_R1_001.fastq.gz 030506923_S6_L001_R2_001.fastq.gz 030506923_f_paired.fq.gz 030506923_f_unpaired.fq.gz 030506923_r_paired.fq.gz 030506923_r_unpaired.fq.gz LEADING:5 TRAILING:5 MINLEN:140 ;
-java -jar trimmomatic-0.39.jar PE 030510223_S8_L001_R1_001.fastq.gz 030510223_S8_L001_R2_001.fastq.gz 030510223_f_paired.fq.gz 030510223_f_unpaired.fq.gz 030510223_r_paired.fq.gz 030510223_r_unpaired.fq.gz LEADING:5 TRAILING:5 MINLEN:140 ;
-java -jar trimmomatic-0.39.jar PE 030510823_S4_L001_R1_001.fastq.gz 030510823_S4_L001_R2_001.fastq.gz 030510823_f_paired.fq.gz 030510823_f_unpaired.fq.gz 030510823_r_paired.fq.gz 030510823_r_unpaired.fq.gz LEADING:5 TRAILING:5 MINLEN:140 ;
+java -jar trimmomatic-0.39.jar PE 030506923_S6_L001_R1_001.fastq.gz 030506923_S6_L001_R2_001.fastq.gz 030506923_f_paired.fq.gz 030506923_f_unpaired.fq.gz 030506923_r_paired.fq.gz 030506923_r_unpaired.fq.gz LEADING:5 TRAILING:5 MINLEN:140 SLIDINGWINDOW:10:30 ;
+java -jar trimmomatic-0.39.jar PE 030510223_S8_L001_R1_001.fastq.gz 030510223_S8_L001_R2_001.fastq.gz 030510223_f_paired.fq.gz 030510223_f_unpaired.fq.gz 030510223_r_paired.fq.gz 030510223_r_unpaired.fq.gz LEADING:5 TRAILING:5 MINLEN:140 SLIDINGWINDOW:10:30 ;
+java -jar trimmomatic-0.39.jar PE 030510823_S4_L001_R1_001.fastq.gz 030510823_S4_L001_R2_001.fastq.gz 030510823_f_paired.fq.gz 030510823_f_unpaired.fq.gz 030510823_r_paired.fq.gz 030510823_r_unpaired.fq.gz LEADING:5 TRAILING:5 MINLEN:140 SLIDINGWINDOW:10:30 ; 
 mkdir trimm ; 
 mv *_paired.fq.gz trimm/ ; 
 rm *_unpaired.fq.gz ;
@@ -30,7 +30,7 @@ mkdir fastqc ;
 mv *.html *.zip fastqc/ ; 
 ls -lh ; 
 
-## fastq-mcf ##
+## fastq-mcf (alternative) ##
 fastq-mcf NexteraPE-PE.fa 030510223_f_paired.fq.gz 030510223_r_paired.fq.gz -o 030510223_f_clean.fq.gz -o 030510223_r_clean.fq.gz -q 20 -x 20 ;
 fastq-mcf NexteraPE-PE.fa 030506923_f_paired.fq.gz 030506923_r_paired.fq.gz -o 030506923_f_clean.fq.gz -o 030506923_r_clean.fq.gz -q 20 -x 20 ;
 fastq-mcf NexteraPE-PE.fa 030510823_f_paired.fq.gz 030510823_r_paired.fq.gz -o 030510823_f_clean.fq.gz -o 030510823_r_clean.fq.gz -q 20 -x 20 ;
@@ -40,7 +40,7 @@ mv *.html *.zip fastqc/ ;
 ls -lh ; 
 ```
 
-# The code 
+# Don't touch this, don't even look 
 ```r
 ## cleaning ##
 java -jar trimmomatic.jar PE forward.fastq.gz reverse.fastq.gz output_forward_paired.fq.gz output_forward_unpaired.fq.gz output_reverse_paired.fq.gz output_reverse_unpaired.fq.gz LEADING:3 TRAILING:3 MINLEN:200 ;
