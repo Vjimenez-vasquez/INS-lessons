@@ -40,7 +40,11 @@ mv *.html *.zip fastqc/ ;
 ls -lh ; 
 
 ## spades assembly ##
-spades -1 030510223_f_clean.fq.gz -2 030510223_r_clean.fq.gz --careful -o 030510223_spades -t 25 ;
+## spades assembly ##
+spades -1 030506923_f_paired.fq.gz -2 030506923_r_paired.fq.gz --careful -o 030506923_spades -t 25 ;
+spades -1 030510223_f_paired.fq.gz -2 030510223_r_paired.fq.gz --careful -o 030510223_spades -t 25 ;
+spades -1 030510823_f_paired.fq.gz -2 030510823_r_paired.fq.gz --careful -o 030510823_spades -t 25 ;
+ls -lh ; 
 ```
 
 # Don't touch this, don't even look 
