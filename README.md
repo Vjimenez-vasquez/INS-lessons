@@ -18,9 +18,9 @@ ls -lh ;
 # 2 # trimming ##
 # http://www.usadellab.org/cms/index.php?page=trimmomatic # 
 ## trimmomatic ##
-java -jar trimmomatic-0.39.jar PE 030506923_S6_L001_R1_001.fastq.gz 030506923_S6_L001_R2_001.fastq.gz 030506923_f_paired.fq.gz 030506923_f_unpaired.fq.gz 030506923_r_paired.fq.gz 030506923_r_unpaired.fq.gz LEADING:5 TRAILING:5 MINLEN:140 SLIDINGWINDOW:10:30 ;
-java -jar trimmomatic-0.39.jar PE 030510223_S8_L001_R1_001.fastq.gz 030510223_S8_L001_R2_001.fastq.gz 030510223_f_paired.fq.gz 030510223_f_unpaired.fq.gz 030510223_r_paired.fq.gz 030510223_r_unpaired.fq.gz LEADING:5 TRAILING:5 MINLEN:140 SLIDINGWINDOW:10:30 ;
-java -jar trimmomatic-0.39.jar PE 030510823_S4_L001_R1_001.fastq.gz 030510823_S4_L001_R2_001.fastq.gz 030510823_f_paired.fq.gz 030510823_f_unpaired.fq.gz 030510823_r_paired.fq.gz 030510823_r_unpaired.fq.gz LEADING:5 TRAILING:5 MINLEN:140 SLIDINGWINDOW:10:30 ; 
+java -jar trimmomatic-0.39.jar PE -threads 25 030506923_S6_L001_R1_001.fastq.gz 030506923_S6_L001_R2_001.fastq.gz 030506923_f_paired.fq.gz 030506923_f_unpaired.fq.gz 030506923_r_paired.fq.gz 030506923_r_unpaired.fq.gz SLIDINGWINDOW:4:20 MINLEN:100 ;
+java -jar trimmomatic-0.39.jar PE -threads 25 030510223_S8_L001_R1_001.fastq.gz 030510223_S8_L001_R2_001.fastq.gz 030510223_f_paired.fq.gz 030510223_f_unpaired.fq.gz 030510223_r_paired.fq.gz 030510223_r_unpaired.fq.gz SLIDINGWINDOW:4:20 MINLEN:100 ;
+java -jar trimmomatic-0.39.jar PE -threads 25 030510823_S4_L001_R1_001.fastq.gz 030510823_S4_L001_R2_001.fastq.gz 030510823_f_paired.fq.gz 030510823_f_unpaired.fq.gz 030510823_r_paired.fq.gz 030510823_r_unpaired.fq.gz SLIDINGWINDOW:4:20 MINLEN:100 ;
 mkdir trimm ; 
 mv *_paired.fq.gz trimm/ ; 
 rm *_unpaired.fq.gz ;
