@@ -59,13 +59,13 @@ mv 030510223_spades/scaffolds.fasta 030510223_spades/030510223_scaffolds.fasta ;
 mv 030510223_spades/030510223_contigs.fasta 030510223_spades/030510223_scaffolds.fasta . ;
 ls -lh ; 
 
-# 5 # preparar la data #
+# 5 # preparar la data ##
 grep ">" sequences.fasta | wc -l ;
 grep ">" sequences.fasta ; 
 sed 's/\ |.*//g' sequences.fasta > sequences2.fasta ; 
 grep ">" sequences2.fasta ; 
 
-# 6 # añadir IDs a cada contigs de cada muestra#
+# 6 # añadir IDs a cada contigs de cada muestra ##
 # install.packages("seqinr") #
 library(seqinr) ;
 r <- dir() ;
@@ -79,6 +79,8 @@ for (i in 1:length(head)){ ;
 q("no") ;
 
 cat *.fas > contigs.fasta
+
+# 7 # be patient ... codes in construction ##
 
 ```
 
