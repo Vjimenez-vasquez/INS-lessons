@@ -28,7 +28,9 @@ cd trimm/ ;
 fastqc *.gz -t 12 ; 
 mkdir fastqc ;
 mv *.html *.zip fastqc/ ; 
-ls -lh ; 
+ls -lh ;
+# ¿qué calidad tienen ahora los reads? #
+# ¿cuales son sus longitudes? #
 
 ## fastq-mcf (alternative) ##
 fastq-mcf NexteraPE-PE.fa 030510223_f_paired.fq.gz 030510223_r_paired.fq.gz -o 030510223_f_clean.fq.gz -o 030510223_r_clean.fq.gz -q 20 -x 20 ;
@@ -58,6 +60,9 @@ mv 030510223_spades/contigs.fasta 030510223_spades/030510223_contigs.fasta  ;
 mv 030510223_spades/scaffolds.fasta 030510223_spades/030510223_scaffolds.fasta ; 
 mv 030510223_spades/030510223_contigs.fasta 030510223_spades/030510223_scaffolds.fasta . ;
 ls -lh ; 
+
+# ¿cuántos son los contigs resultantes? # 
+# ¿qué longitudes presentan? # 
 
 # 5 # preparar la data ##
 grep ">" sequences.fasta | wc -l ;
