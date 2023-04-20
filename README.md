@@ -89,6 +89,21 @@ cat *.fas > contigs.fasta
 
 ```
 
+# The code for INS
+```r
+# 8 # identificacion taxonomica de los reads # 
+for r1 in *fastq.gz
+do
+prefix=$(basename $r1 _R1.fastq.gz)
+r2=${prefix}_R2.fastq.gz
+kraken2 --paired --use-names --gzip-compressed --db /home/veronica/Programas/database/kraken2/k2_viral_20230314 --threads 25 $r1 $r2 --report ${prefix}_report.txt --output ${prefix}_kraken2.out ;
+done ;
+mkdir kraken_run2 ;
+mv *.out *.txt kraken_run2/ ;
+cd kraken_run2/ ; 
+ls -lh ; 
+```
+
 # Don't touch this, don't even look 
 ```r
 ## cleaning ##
