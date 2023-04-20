@@ -102,6 +102,14 @@ mkdir kraken_run2 ;
 mv *.out *.txt kraken_run2/ ;
 cd kraken_run2/ ; 
 ls -lh ; 
+
+# 9 # PAVIAN #
+#i1# install#
+if (!require(remotes)) { install.packages("remotes") }
+remotes::install_github("fbreitwieser/pavian")
+
+#2# load#
+pavian::runApp(port=5000)
 ```
 
 # Don't touch this, don't even look 
