@@ -89,7 +89,7 @@ cat *.fas > contigs.fasta
 
 ```
 
-# The code for INS
+# The code for INS (monkeypox)
 ```r
 # 8 # identificacion taxonomica de los reads # 
 for r1 in *fastq.gz
@@ -104,12 +104,23 @@ cd kraken_run2/ ;
 ls -lh ; 
 
 # 9 # PAVIAN #
-#i1# install#
+#9.1# install#
 if (!require(remotes)) { install.packages("remotes") }
 remotes::install_github("fbreitwieser/pavian")
 
-#2# load#
+#9.2# load #
 pavian::runApp(port=5000)
+
+# 10 # generar una file con la lista de muestras #
+ls *.fastq.gz > a1.txt
+sed 's/_R1.fastq.gz//g' a1.txt > a2.txt ; sed 's/_R2.fastq.gz//g' a2.txt > file.txt ;
+rm a1.txt a2.txt ; 
+head file.txt ; 
+
+# 11 # alinear y obtener nuevos fastq files con reads de monkeypox ##
+bowtie2-build --threads 14 BD/mpox.fasta BD/mpox ; 
+cat file.txt | xargs -n 3 -P 3 -I {} bowtie2 -N 1 -L 18 --al-conc bowtie_clean/{} --no-unal -p 12 -x BD/mpox -1 {}"_R1.fastq.gz" -2 {}"_R2.fastq.gz" > file.log 2>&1& ; 
+ls -lh ; 
 ```
 
 # Don't touch this, don't even look 
